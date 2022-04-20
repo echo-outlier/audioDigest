@@ -1,0 +1,50 @@
+{
+  "key": "my-app",
+  "name": "My app",
+  "description": "My very first app",
+  "baseUrl": "{{localBaseUrl}}",
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed"
+  },
+  "scopes": ["READ", "WRITE"],
+  "apiMigrations": {
+    "signed-install": true
+  },
+  "modules": {
+    "dynamicContentMacros": [
+      {
+        "key": "hello",
+        "height": "1px",
+        "width": "1px",
+        "name": {
+          "value": "AudioDigest"
+        },
+        "url": "/audio",
+        "description": {
+          "value": "Audio Recorder App"
+        },
+        "outputType": "inline",
+        "bodyType": "none",
+        "editor": {
+          "url": "/custom",
+          "insertTitle": {
+            "value": "Audio Digest"
+          },
+          "height": "450px",
+          "width": "1000px",
+          "description": {
+            "value": "editor to display previous recording"
+          },
+          "bodyType": "rich-text",
+          "name": {
+            "value": "previous Recording"
+          },
+          "key": "prev-recording"
+        }
+      }
+    ]
+  }
+}
